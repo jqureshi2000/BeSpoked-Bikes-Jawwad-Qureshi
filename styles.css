@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+#header {
+    position: fixed;
+    width: 938px;
+    height: 104px;
+    left: 466px;
+    top: -15px;
+    background: rgba(57, 56, 56, 0.65);
+    border-radius: 25px;
+    cursor:default;
+}
+
+#infobox { 
+    position: absolute;
+    width: 797px;
+    height: 426px;
+    left: 163px;
+    top: 221px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
+    padding-left: 25px;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    cursor:default;
+}
+
+#infobox p { 
+    line-height: 2.0;
+}
+
+#cta {
+    position: absolute;
+    background-color: #315175;
+    cursor: pointer;
+    color: #FFFFFF;
+    padding: 14px 28px;
+    left: 163px;
+    top: 700px;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+#cta a, a:visited, a:active {
+    color: white;
+    text-decoration: none;
+  }
+
+#cta:hover {
+    color:#315175;
+    background-color: #FFFFFF;
+}
+
+.AttentionGrabber {
+    position: absolute;
+    width: 396px;
+    height: 59px;
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 30%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 59px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#landing {
+    position:fixed;
+    width: 1920px;
+    height: 965px;
+    left: 0px;
+    top: 0px;
+    background: url(BeSpokedBikesBackground.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+#secondary {
+    position: absolute;
+    width: 1920px;
+    height: 992px;
+    left: 0px;
+    top: 961px;
+    background: rgba(57, 56, 56);
+}
+
+.buttongui {
+    position: absolute;
+    width: 536px;
+    height: 607px;
+    left: 106px;
+    background: #DFE6F2;
+}
