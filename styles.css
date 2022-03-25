@@ -15,7 +15,7 @@ html {
     cursor:default;
 }
 
-#infobox { 
+#infobox {
     position: absolute;
     width: 797px;
     height: 426px;
@@ -29,7 +29,7 @@ html {
     cursor:default;
 }
 
-#infobox p { 
+#infobox p {
     line-height: 2.0;
 }
 
@@ -84,17 +84,76 @@ html {
 
 #secondary {
     position: absolute;
-    width: 1920px;
-    height: 992px;
+    width: 1928px;
+    height: 1080px;
     left: 0px;
     top: 961px;
-    background: rgba(57, 56, 56);
+    background: url(road.jpg) no-repeat center center fixed;
+    border-top: 5px solid #000000;
+    background-size: cover;
+}
+
+.informationHeader {
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .buttongui {
     position: absolute;
     width: 536px;
     height: 607px;
-    left: 106px;
-    background: #DFE6F2;
+    left: 10%;
+    top: 90px;
+
+
+    vertical-align: center;
+}
+
+.buttongui button{ 
+    width: 217px;
+    height: 69px;
+}
+
+#displayTable {
+    background: #e8e8e8;
+    display: inline-block;
+    font-size: 20px;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+}
+
+table {
+    margin-left: 45%;
+    width: 800px;
+    border: 5px solid #000000;
+    background-color: #ffffff;
+    border-collapse: separate;
+    border-spacing: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#table1, #table2, #table3, #table4 {
+    display: none;
+}
+
+#formsubmission{
+    position: absolute;
+    background-color: #000000;
+    width: 1920px;
+    height: 992px;
+    left: 0px;
+    top: 1000px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px 0px 50px 10px;
+    font-size: 20px;
+}
+
+.error {
+    color: #FF0000;
+}
+
+hr {
+    color: #fff;
 }
