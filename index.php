@@ -90,10 +90,10 @@
 
             echo "</table>";
           ?>
-        </div>  
+        </div>
 
         <div  id = "table3">
-          <?php    
+          <?php
             include("connection1.php");
 
             $c = mysqli_query($dbc, "SELECT * FROM customer ORDER BY LastName ASC");
@@ -114,10 +114,10 @@
         </div>
 
         <div  id = "table4">
-          <?php    
+          <?php
             include("connection1.php");
 
-            $saleProduct = mysqli_query($dbc, 
+            $saleProduct = mysqli_query($dbc,
             "SELECT *
             FROM sales, products
             WHERE sales.ProductID = products.ProductID");
@@ -148,10 +148,10 @@
         </div>
 
         <div id = "formsubmission">
-          <?php 
+          <?php
           $fname = $fnameErr = $lname = $lnameErr = $address = $addressErr = $phone = $phoneErr = $manager = $managerErr =  " ";
           $name = $nameErr = $manufacturer = $manufacturerErr = $style = $styleErr = $pprice = $ppriceErr = $sprice = $spriceErr = $quantity = $quantityErr = $cpercentage = $cpercentageErr = " ";
-          $flag = 0;    
+          $flag = 0;
 
           if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($_POST['submit_1']) {
@@ -165,8 +165,8 @@
                   $fnameErr = "Only letters and white space allowed";
                   $flag = 1;
                 }
-              }  
-  
+              }
+
               if (empty($_POST["lname"])) {
                 $lnameErr = "Last Name is required";
                 $flag = 1;
@@ -177,8 +177,8 @@
                   $lnameErr = "Only letters and white space allowed";
                   $flag = 1;
                 }
-              }  
-  
+              }
+
               if (empty($_POST["phone"])) {
                 $phoneErr = "Phone is required";
                 $flag = 1;
@@ -190,7 +190,7 @@
                   $flag = 1;
                 }
               }
-  
+
               if (empty($_POST["manager"])) {
                 $managerErr = "Manager's name is required";
                 $flag = 1;
@@ -201,17 +201,17 @@
                   $managerErr = "Only letters and white space allowed";
                   $flag = 1;
                 }
-              } 
+              }
 
               if ($flag == 0) {
                 include("connection1.php");
-  
+
                 $q = mysqli_query($dbc, "SELECT * FROM salesperson WHERE Phone = '$phone'");
                 $num_phone = mysqli_num_rows($q);
                 if ($num_phone!=0){
                   echo "Phone number has been used! Please us another phone number. <br>";
                 }
-  
+
                 if ($num_phone == 0) {
                   mysqli_query($dbc, "INSERT INTO salesperson(FirstName, LastName, Address, Phone, Manager) VALUES('$fname','$lname','$address','$phone','$manager')");
                   $registered = mysqli_affected_rows($dbc);
@@ -229,8 +229,8 @@
                     $nameErr = "Only letters and white space allowed";
                     $flag = 1;
                   }
-                }  
-    
+                }
+
                 if (empty($_POST["manufacturer"])) {
                   $manufacturerErr = "Manufacturer Name is required";
                   $flag = 1;
@@ -242,7 +242,7 @@
                     $flag = 1;
                   }
                 }
-    
+
                 if (empty($_POST["style"])) {
                   $styleErr = "Style is required";
                   $flag = 1;
@@ -278,13 +278,13 @@
 
                 if ($flag == 0) {
                   include("connection1.php");
-    
+
                   $q = mysqli_query($dbc, "SELECT * FROM products WHERE Name = '$name'");
                   $num_products = mysqli_num_rows($q);
                   if ($num_products!=0){
                     echo "Product has been used! Please enter a new product. <br>";
                   }
-    
+
                   if ($num_products == 0) {
                     mysqli_query($dbc, "INSERT INTO products(Name, Manufacturer, Style, PurchasePrice, SalePrice, QtyOnHand, CommissionPercentage) VALUES('$name', '$manufacturer', '$style', '$pprice', '$sprice', '$quantity', '$cpercentage')");
                     $registered = mysqli_affected_rows($dbc);
@@ -325,9 +325,9 @@
           <br><br>
 
           Manager: <input type = text name = "manager" value= "<?php echo $manager; ?>" maxlength = "10">
-          <span class = "error">* <?php echo $managerErr; ?></span> 
+          <span class = "error">* <?php echo $managerErr; ?></span>
           <br><br>
-          <input type = "submit" name = "submit_1" value = "submit"> 
+          <input type = "submit" name = "submit_1" value = "submit">
           </form>
 
           <hr>
@@ -353,18 +353,18 @@
           <br><br>
 
           Sale Price: <input type = text name = "sprice" value= "<?php echo $sprice; ?>" maxlength = "10">
-          <span class = "error">* <?php echo $spriceErr; ?></span> 
+          <span class = "error">* <?php echo $spriceErr; ?></span>
           <br><br>
 
           Quantity on Hand: <input type = text name = "quantity" value= "<?php echo $quantity; ?>" maxlength = "10">
-          <span class = "error">* <?php echo $quantityErr; ?></span> 
+          <span class = "error">* <?php echo $quantityErr; ?></span>
           <br><br>
 
           Commission Percentage: <input type = text name = "cpercentage" value= "<?php echo $cpercentage; ?>" maxlength = "10">
-          <span class = "error">* <?php echo $cpercentageErr; ?></span> 
+          <span class = "error">* <?php echo $cpercentageErr; ?></span>
           <br><br>
 
-          <input type = "submit"> 
+          <input type = "submit">
           </form>
 
         </div>
